@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Product Details</title>
+<style>
+body { font-family:'Comic Sans MS', cursive, sans-serif; background:#fff8f0; margin:0; padding:0; text-align:center; }
+.product-container { max-width:650px; margin:50px auto; background:#fff; border-radius:15px; padding:30px; box-shadow:0 4px 15px rgba(0,0,0,0.2); }
+.product-container img { max-width:100%; border-radius:10px; margin-bottom:20px; }
+.price { font-size:1.3rem; font-weight:bold; color:#d2691e; margin:10px 0; }
+.details { text-align:left; margin:20px auto; font-size:1.1rem; line-height:1.6; color:#333; }
+.details p span.label { font-weight:bold; color:red; }
+.details p span.value { font-weight:bold; color:green; }
+.quantity { display:flex; justify-content:center; align-items:center; gap:10px; margin:20px 0; }
+.quantity button { background:#2e8b57; color:white; border:none; padding:8px 14px; font-size:18px; border-radius:6px; cursor:pointer; }
+.quantity input { width:50px; text-align:center; font-size:16px; border-radius:6px; border:1px solid #aaa; }
+.buy-btn, .back-btn { display:inline-block; padding:12px 24px; margin:10px; border-radius:10px; text-decoration:none; font-weight:bold; font-size:1rem; transition:0.3s; }
+.buy-btn { background:#25D366; color:white; }
+.buy-btn:hover { background:#128C7E; }
+.back-btn { background:#2e8b57; color:white; }
+.back-btn:hover { background:#1e5f3d; }
+</style>
+</head>
+<body>
+
+<div class="product-container">
+  <h1 id="productName">Loading...</h1>
+  <img id="productImg" src="" alt="Product Image">
+  <p class="price" id="productPrice"></p>
+
+  <div class="details">
+    <p><span class="label">Description:</span> <span class="value" id="productDesc">-</span></p>
+    <p><span class="label">No of chocolate:</span> <span class="value" id="productCount">-</span></p>
+    <p><span class="label">Shape:</span> <span class="value" id="productShape">-</span></p>
+    <p><span class="label">Type:</span> <span class="value" id="productType">-</span></p>
+  </div>
+
+  <div class="quantity">
+    <button type="button" onclick="updateQuantity(-1)">-</button>
+    <input type="text" id="quantityInput" value="1" readonly>
+    <button type="button" onclick="updateQuantity(1)">+</button>
+  </div>
+
+  <a class="buy-btn" id="whatsappBtn" target="_blank">Buy on WhatsApp</a>
+  <a class="back-btn" href="index.html#products">⬅ Back to Products</a>
+</div>
+
+<script>
+// All products in one JS object
+const products = {
+////////////////Classic Chocolates/////////////////////////////
+
+  "love-cone": {
+    name: "Love Cone",
+    price: 130,
+    img: "image/classic/Love_Cone.png",
+    desc: "Delicious chocolate cone filled with love",
+    count: 23,
+    type: "Milk chocolate with cashew",
+    shape: "Small Oval"
+  },
+  "mini-pyramid": {
+    name: "Mini Pyramid",
+    price: 65,
+    img: "image/classic/Mini_Pyramid.png",
+    desc: "Pyramid shaped box nice for retrun gifts",
+    count: 12,
+    type: "Milk chocolate with cashew",
+    shape: "Small Oval"
+  },
+  "lovely-lips": {
+    name: "Lovely Lips",
+    price: 95,
+    img: "image/classic/Lovely_Lips.png",
+    desc: "Classic gift for symbol of love",
+    count: 5,
+    type: "Milk chocolate with cashew",
+    shape: "Lips/Heart"
+  },
+    "crazy-toffy": {
+    name: "Crazy Toffy",
+    price: 55,
+    img: "image/classic/Crazy_Toffy.png",
+    desc: "Classic gift for symbol of love",
+    count: 3,
+    type: "Milk chocolate with cashew",
+    shape: "All Shapes"
+  },
+    "pink-heart": {
+    name: "Pink Heart",
+    price: 50,
+    img: "image/classic/Pink_Heart.png",
+    desc: "A big heart as a token of love",
+    count: 1,
+    type: "Milk chocolate with cashew",
+    shape: "Heart"
+  }, 
+    "cute-potli": {
+    name: "Cute Potli",
+    price: 65,
+    img: "image/classic/Cute_Potli.png",
+    desc: "A potli shaped box best for kids and return gift",
+    count: 12,
+    type: "Milk chocolate with cashew",
+    shape: "Small Oval"
+  }, 
+  
+/////////////////////////////Designer /////////////////////////////////////  
+  
+   "mini-bucket": {
+    name: "Mini Bucket",
+    price: 70,
+    img: "image/designer/Mini_Bucket.png",
+    desc: "A handmade bucket with decorative chocolates",
+    count: 5,
+    type: "Milk chocolate with cashew",
+    shape: "Small Oval"
+  },
+    "premium-box": {
+    name: "Premium Box",
+    price: 230,
+    img: "image/designer/Premium_Box.png",
+    desc: "Box with roses and round chocolate",
+    count: 6,
+    type: "Milk chocolate with cashew",
+    shape: "Round"
+  },
+    "sweet-heart-box": {
+    name: "Sweet Heart Box",
+    price: 350,
+    img: "image/designer/Sweet_Heart_box.png",
+    desc: "A complete heart shaped package with heart chocolates",
+    count: 11,
+    type: "Milk chocolate with cashew",
+    shape: "Heart"
+  },
+    "i-love-u-box": {
+    name: "I Love U Box",
+    price: 350,
+    img: "image/designer/I_Love_U_box.png",
+    desc: "A complete heart shaped package with heart chocolates",
+    count: 11,
+    type: "Milk chocolate with cashew",
+    shape: "Heart"
+  },
+    "fantacy-cart": {
+    name: "Fantacy Cart",
+    price: 350,
+    img: "image/designer/Fantacy_Cart.png",
+    desc: "Most cute gift a cart full of chocolate carrying by a doll",
+    count: 6,
+    type: "Milk chocolate with cashew",
+    shape: "All shape"
+  },
+   "big-heart-bouqet": {
+    name: "Big Heart Bouqet",
+    price: 1250,
+    img: "image/designer/Big_Heart_Bouqet.png",
+    desc: "Most royal bouqet with lots of chocolates and roses",
+    count: 40,
+    type: "Milk chocolate with cashew",
+    shape: "Mix"
+  },
+   "small-heart-bouqet": {
+    name: "Small Heart Bouqet",
+    price: 450,
+    img: "image/designer/Small_Heart_Bouqet.png",
+    desc: "Most royal mini bouqet with chocolates and roses",
+    count: 6,
+    type: "Milk chocolate with cashew",
+    shape: "Mix"
+  },
+   "love-book": {
+    name: "Love Book",
+    price: 80,
+    img: "image/designer/Love_Book.png",
+    desc: "A book of love with a big bar chocolate",
+    count: 1,
+    type: "Milk chocolate with cashew",
+    shape: "Bar"
+  },
+  
+/////////////////////////////Occasions/////////////////////////////////////////////  
+  
+   "birthday-box": {
+    name: "Birthday Box",
+    price: 230,
+    img: "image/occasions/Birthday_Box.png",
+    desc: "A customized box for birthday wish",
+    count: 10,
+    type: "Milk chocolate with cashew",
+    shape: "Square"
+  },
+    "greeting-box": {
+    name: "Greeting Box",
+    price: 230,
+    img: "image/occasions/Greeting_Box.png",
+    desc: "A customized box for gratittude wish",
+    count: 10,
+    type: "Milk chocolate with cashew",
+    shape: "Square"
+  },
+   "happy-moment": {
+    name: "Happy Moment",
+    price: 230,
+    img: "image/occasions/Happy_Moment.png",
+    desc: "A customized box for gratittude wish",
+    count: 10,
+    type: "Milk chocolate with cashew",
+    shape: "Square"
+  },
+   "love-lips": {
+    name: "Love Lips",
+    price: 220,
+    img: "image/occasions/Love_Lips.png",
+    desc: "It is a box of 9 cavity with nice packaging",
+    count: 9,
+    type: "Milk chocolate with cashew",
+    shape: "Lips,Heart"
+  },
+   "jali-yellow": {
+    name: "Jali Yellow",
+    price: 280,
+    img: "image/occasions/Jali_Yellow.png",
+    desc: "It is a box of 12 cavity with glossy look",
+    count: 12,
+    type: "Milk chocolate with cashew",
+    shape: "Mix"
+  },
+    "jali-red": {
+    name: "Jali Red",
+    price: 280,
+    img: "image/occasions/Jali_Red.png",
+    desc: "It is a box of 12 cavity with glossy look",
+    count: 12,
+    type: "Milk chocolate with cashew",
+    shape: "Mix"
+  },
+    "transparent-collection": {
+    name: "Transparent Collection",
+    price: 260,
+    img: "image/occasions/Transparent_Collection.png",
+    desc: "It is a box of 12 cavity with transparent look",
+    count: 12,
+    type: "Milk chocolate with cashew",
+    shape: "Mix"
+  },
+
+//////////////////////////Festival////////////////////////////////////////////////////  
+ 
+   "diwali-box": {
+    name: "Diwali Box",
+    price: 350,
+    img: "image/festivals/Diwali_Box.png",
+    desc: "A celebration box of 12 cracker shaped chocolates with dry fruits",
+    count: 12,
+    type: "Milk chocolate with cashew",
+    shape: "Mix"
+  },
+   "new-year": {
+    name: "New Year",
+    price: 300,
+    img: "image/festivals/New_Year.png",
+    desc: "A celebration box for new year ",
+    count: 12,
+    type: "Milk chocolate with cashew",
+    shape: "Mix"
+  },
+   "royal-box": {
+    name: "Royal Box",
+    price: 350,
+    img: "image/festivals/Royal_Box.png",
+    desc: "A celebration with variety shape chocolates ",
+    count: 12,
+    type: "Milk chocolate with cashew",
+    shape: "Mix"
+  },
+  "merry-christmas": {
+    name: "Merry Christmas",
+    price: 300,
+    img: "image/festivals/Merry_Christmas.png",
+    desc: "A celebration box for christmas",
+    count: 12,
+    type: "Milk chocolate with cashew",
+    shape: "Mix"
+  },
+  
+////////////////////////////////Bars///////////////////////////////
+  "birthday-bars": {
+    name: "Birthday Bar",
+    price: 85,
+    img: "image/bars/Birthday_Bars.png",
+    desc: "Customized bar chocolate box for birthday",
+    count: 1,
+    type: "Milk chocolate with cashew",
+    shape: "Bar"
+  },
+    "diwali-bar": {
+    name: "Diwali Bar Blue",
+    price: 85,
+    img: "image/bars/Diwali_Bar_blue.png",
+    desc: "Customized bar chocolate box for Diwali",
+    count: 1,
+    type: "Milk chocolate with cashew",
+    shape: "Bar"
+  },
+    "diwali-bar-red": {
+    name: "Diwali Bar Red",
+    price: 85,
+    img: "image/bars/Diwali_Bar_red.png",
+    desc: "Customized bar chocolate box for Diwali",
+    count: 1,
+    type: "Milk chocolate with cashew",
+    shape: "Bar"
+  },
+    "best-wishes": {
+    name: "Best Wishes",
+    price: 85,
+    img: "image/bars/Best_Wishes.png",
+    desc: "Customized bar chocolate box for Best Wishes",
+    count: 1,
+    type: "Milk chocolate with cashew",
+    shape: "Bar"
+  },
+   "congratulation": {
+    name: "Congratulation",
+    price: 85,
+    img: "image/bars/Congratulation.png",
+    desc: "Customized bar chocolate box for Best Wishes",
+    count: 1,
+    type: "Milk chocolate with cashew",
+    shape: "Bar"
+  },
+  "thank-you": {
+    name: "Thank You",
+    price: 85,
+    img: "image/bars/Thank_You.png",
+    desc: "Customized bar chocolate box for Thank You",
+    count: 1,
+    type: "Milk chocolate with cashew",
+    shape: "Bar"
+  },
+    "love-you": {
+    name: "Love You",
+    price: 85,
+    img: "image/bars/Love_You.png",
+    desc: "Customized bar chocolate box for Love",
+    count: 1,
+    type: "Milk chocolate with cashew",
+    shape: "Bar"
+  },
+   "anniversary-bar": {
+    name: "Anniversary Bar",
+    price: 85,
+    img: "image/bars/Anniversary_Bar.png",
+    desc: "Customized bar chocolate box for Anniversary",
+    count: 1,
+    type: "Milk chocolate with cashew",
+    shape: "Bar"
+  },
+ 
+};
+
+// Get product ID from URL
+const urlParams = new URLSearchParams(window.location.search);
+const productId = urlParams.get("id");
+let currentProduct = products[productId];
+
+// Show product or error
+if (!currentProduct) {
+  document.getElementById("productName").textContent = "Product Not Found";
+} else {
+  document.getElementById("productName").textContent = currentProduct.name;
+  document.getElementById("productImg").src = currentProduct.img;
+  document.getElementById("productPrice").textContent = "MRP: ₹" + currentProduct.price;
+  document.getElementById("productDesc").textContent = currentProduct.desc;
+  document.getElementById("productCount").textContent = currentProduct.count;
+  document.getElementById("productType").textContent = currentProduct.type;
+  document.getElementById("productShape").textContent = currentProduct.shape;
+}
+
+// Quantity & WhatsApp
+let quantity = 1;
+
+function updateQuantity(change) {
+  quantity += change;
+  if (quantity < 1) quantity = 1;
+  document.getElementById("quantityInput").value = quantity;
+  updateWhatsAppLink();
+}
+
+function updateWhatsAppLink() {
+  if (!currentProduct) return;
+  const message = `I want to buy ${quantity} x ${currentProduct.name} (₹${currentProduct.price} each). Description: ${currentProduct.desc}. Count: ${currentProduct.count}. Type: ${currentProduct.type}. Shape: ${currentProduct.shape}`;
+  document.getElementById("whatsappBtn").href = "https://wa.me/917008173772?text=" + encodeURIComponent(message);
+}
+
+// Initialize link
+updateWhatsAppLink();
+</script>
+
+</body>
+</html>
