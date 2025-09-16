@@ -309,44 +309,549 @@
   .highlight-gold { color: #d4af37; font-weight: bold; }
   .highlight-green { color: #2e8b57; font-weight: bold; }
   .highlight-purple { color: #800080; font-weight: bold; }
-</style>
+  
+  /* About Section */
+.about-section {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f9e5ec, #e8f5f9);
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #5a2d82;
+  font-weight: bold;
+}
+
+.about-section p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.about-section .highlight {
+  color: #d2691e;
+  font-weight: bold;
+}
+
+.about-section .highlight-purple {
+  color: #5a2d82;
+  font-weight: bold;
+}
+
+/* Cards layout */
+.about-cards {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.about-card {
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.about-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+/* Individual card colors */
+.about-card.occasion {
+  background: #fff8f0;
+  color: #d2691e;
+}
+
+.about-card.handmade {
+  background: #f0faff;
+  color: #5a2d82;
+}
+
+.about-card.premium {
+  background: #f9f0ff;
+  color: #ff69b4;
+}
+/*For Chocolate folder category*/
+
+.category-tabs {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  background: #fff;
+  border: 2px solid #2e8b57;
+  color: #2e8b57;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+  background: #2e8b57;
+  color: #fff;
+}
+
+.category {
+  display: none;
+  margin-top: 20px;
+}
+
+    .category.active {
+      display: block;
+    }
+.product-card a {
+  text-decoration: none; /* remove underline */
+  color: inherit;        /* take the parent color */
+}
+
+.product-card a:link,
+.product-card a:visited,
+.product-card a:hover,
+.product-card a:active {
+  color: inherit; /* force same color across states */
+}
+  /* Product title color → green */
+    .product-card h3 {
+      margin: 10px 0;
+      color: #2e8b57; /* green */
+    }	
+	
+	
+  </style>
+</head>
+<body>
+  <!-- Emoji Border -->
+  <div class="emoji-border">
+    <div class="emoji-row">
+      <span class="emoji">🍫</span><span class="emoji">🍭</span><span class="emoji">🍬</span><span class="emoji">🍫</span><span class="emoji">🍭</span><span class="emoji">🍬</span>
+    </div>
+    <div style="display:flex; justify-content: space-between; height: 100%;">
+      <div class="emoji-col">
+        <span class="emoji">🍫</span><span class="emoji">🍬</span><span class="emoji">🍭</span><span class="emoji">🍫</span>
+      </div>
+      <div class="emoji-col">
+        <span class="emoji">🍬</span><span class="emoji">🍭</span><span class="emoji">🍫</span><span class="emoji">🍭</span>
+      </div>
+    </div>
+    <div class="emoji-row">
+      <span class="emoji">🍭</span><span class="emoji">🍬</span><span class="emoji">🍫</span><span class="emoji">🍭</span><span class="emoji">🍬</span><span class="emoji">🍫</span>
+    </div>
+  </div>
 
 
   <!-- Products -->
   <section id="products">
     <h2>Our Products</h2>
-    <div class="products">
-      <div class="product-card">
-        <img src="image/Love_Cone.png" alt="Love Cone">
-        <h3>Love Cone</h3>
-        <p class="price">MRP: ₹120</p>
-        <a class="buy-btn" 
-   href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Love%20Cone" 
-   target="_blank">Buy on WhatsApp</a>
-      </div>
-      <div class="product-card">
-        <img src="image/Mini_Pyramid.png" alt="Mini Pyramid">
+	
+	  <!-- Category Tabs -->
+ <!-- <div class="category-tabs">
+    <button class="tab-btn active" onclick="showCategory('classics')">🍫 Classics</button>
+    <button class="tab-btn" onclick="showCategory('designer')">💝 Designer</button>
+    <button class="tab-btn" onclick="showCategory('occasions')">🎉 Occasions</button>
+    <button class="tab-btn" onclick="showCategory('festivals')">🪔 Festivals</button>
+	<button class="tab-btn" onclick="showCategory('bars')">🍫 Bars</button>
+  </div>-->
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="showCategory('classics', this)">Classics</button>
+  <button class="tab-btn" onclick="showCategory('designer', this)">Designer</button>
+  <button class="tab-btn" onclick="showCategory('occasions', this)">Occasions</button>
+  <button class="tab-btn" onclick="showCategory('festivals', this)">Festivals</button>
+  <button class="tab-btn" onclick="showCategory('bars', this)">Bars</button>
+  
+  
+</div>
+
+  
+  <!--Classics-->
+  
+  <!-- Classics Category -->
+<div id="classics" class="category active">
+  <h3>🍫 Classic Chocolates</h3>
+  <div class="products">
+
+ <!-- Love Cone -->
+<div class="product-card" id="love-cone">
+  <a href="product.html?id=love-cone">
+    <img src="image/classic/Love_Cone.png" alt="Love Cone">
+    <h3>Love Cone</h3>
+  </a>
+  <p class="price">MRP: ₹130</p>
+  <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Love%20Cone" target="_blank">Buy on WhatsApp</a>
+</div>
+
+    	
+<!--Mini Pyramid-->	
+      <div class="product-card" id="mini-pyramid">
+	  <a href="product.html?id=mini-pyramid">
+        <img src="image/classic/Mini_Pyramid.png" alt="Mini Pyramid">
         <h3>Mini Pyramid</h3>
+       </a>		
+        <p class="price">MRP: ₹65</p>
+        <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Mini%20Pyramid" target="_blank">Buy on WhatsApp</a>
+      </div>
+	  
+<!--Lovely Lips-->
+   <div class="product-card" id="lovely-lips">
+        <a href="product.html?id=lovely-lips">
+      <img src="image/classic/Lovely_Lips.png" alt="Lovely Lips">
+        <h3>Lovely Lips</h3>
+		</a>
+        <p class="price">MRP: ₹95</p>
+        <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Lovely%20Lips" target="_blank">Buy on WhatsApp</a>
+      </div>
+	  
+<!--Crazy Toffy-->
+	  <div class="product-card" id="crazy-toffy">
+	  <a href="product.html?id=crazy-toffy">
+      <img src="image/classic/Crazy_Toffy.png" alt="Crazy Toffy">
+      <h3>Crazy Toffy</h3>
+	  </a>
+        <p class="price">MRP: ₹55</p>
+        <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Crazy%20Toffy" target="_blank">Buy on WhatsApp</a>
+      </div>
+
+<!--Pink Heart-->
+	  <div class="product-card" id="pink-heart">
+      <a href="product.html?id=pink-heart">
+       <img src="image/classic/Pink_Heart.png" alt="Pink Heart">
+        <h3>Pink Heart</h3>
+	</a>	
         <p class="price">MRP: ₹50</p>
-        <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Love%20Cone" target="_blank">Buy on WhatsApp</a>
+        <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Pink%20Heart" target="_blank">Buy on WhatsApp</a>
       </div>
-      <div class="product-card">
-        <img src="image/Sweet_Heart_box.png" alt="Sweet Heart Box">
+	  
+<!--Cute Potli-->
+	  <div class="product-card" id="cute-potli">
+      <a href="product.html?id=cute-potli">
+       <img src="image/classic/Cute_Potli.png" alt="Cute Potli">
+        <h3>Cute Potli</h3>
+	</a>	
+        <p class="price">MRP: ₹55</p>
+        <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Cute%20Potli" target="_blank">Buy on WhatsApp</a>
+      </div>	  
+	    
+	 </div>
+    </div>	 
+	
+<!--Designer-->
+	<div id="designer" class="category">
+	  <h3>🍫 Designer Chocolates</h3>
+	  <div class="products">
+
+<!--Mini Bucket-->
+	  
+      <div class="product-card" id="mini-bucket">
+           <a href="product.html?id=mini-bucket">   
+		   <img src="image/designer/Mini_Bucket.png" alt="Mini Bucket">
+      
+       <h3>Mini Bucket</h3>
+	   </a>
+        <p class="price">MRP: ₹70</p>
+        <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Mini%20Bucket" target="_blank">Buy on WhatsApp</a>
+      </div>
+	  
+	  
+<!--Premium Box-->
+      <div class="product-card" id="premium-box">
+          <a href="product.html?id=premium-box">  
+		  <img src="image/designer/Premium_Box.png" alt="Premium Box">
+        <h3>Premium Box</h3>
+          </a>
+        <p class="price">MRP: ₹230</p>
+        <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Premium%20Box" target="_blank">Buy on WhatsApp</a>
+      </div>
+<!--Sweet Heart Box -->	  
+	  <div class="product-card" id="sweet-heart-box">
+          <a href="product.html?id=sweet-heart-box">  
+		  <img src="image/designer/Sweet_Heart_box.png" alt="Sweet Heart Box">
         <h3>Sweet Heart Box</h3>
-        <p class="price">MRP: ₹250</p>
-        <a class="buy-btn" 
-   href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Love%20Cone" 
-   target="_blank">Buy on WhatsApp</a>
+		</a>
+        <p class="price">MRP: ₹350</p>
+        <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Sweet%20Heart%20Box" target="_blank">Buy on WhatsApp</a>
       </div>
-      <div class="product-card">
-        <img src="image/I_Love_U_box.png" alt="I Love U Box">
+<!-- I Love U Box -->	  
+	  <div class="product-card" id="i-love-u-box">
+          <a href="product.html?id=i-love-u-box">  
+		  <img src="image/designer/I_Love_U_box.png" alt="I Love U box">
         <h3>I Love U Box</h3>
-        <p class="price">MRP: ₹250</p>
-        <a class="buy-btn" 
-   href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Love%20Cone" 
-   target="_blank">Buy on WhatsApp</a>
+		</a>
+        <p class="price">MRP: ₹350</p>
+        <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20I%20Love%20U%20Box" target="_blank">Buy on WhatsApp</a>
+      </div>	  
+	  
+<!-- Fantacy Cart -->	  
+	  <div class="product-card" id="fantacy-cart">
+          <a href="product.html?id=fantacy-cart"> 
+		  <img src="image/designer/Fantacy_Cart.png" alt="Fantacy Cart">
+        <h3>Fantacy Cart</h3>
+		</a>
+        <p class="price">MRP: ₹350</p>
+        <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Fantacy%20Cart" target="_blank">Buy on WhatsApp</a>
       </div>
+	  
+<!-- Big Heart Bouqet -->	  
+	  <div class="product-card" id="big-heart-bouqet">
+          <a href="product.html?id=big-heart-bouqet"> 
+		  <img src="image/designer/Big_Heart_Bouqet.png" alt="Small Heart Bouqet">
+        <h3>Big Heart Bouqet</h3>
+		</a>
+        <p class="price">MRP: ₹1250</p>
+        <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Big%20Heart%20Bouqet" target="_blank">Buy on WhatsApp</a>
+      </div>
+	  
+<!-- Small Heart Bouqet -->	  
+	  <div class="product-card" id="small-heart-bouqet">
+          <a href="product.html?id=small-heart-bouqet">  
+		  <img src="image/designer/Small_Heart_Bouqet.png" alt="Small Heart Bouqet">
+        <h3>Small Heart Bouqet</h3>
+		</a>
+        <p class="price">MRP: ₹450</p>
+        <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Small%20Heart%20Bouqet" target="_blank">Buy on WhatsApp</a>
+      </div>
+
+<!--Love Book -->	  
+	  <div class="product-card" id="love-book">
+          <a href="product.html?id=love-book">
+		  <img src="image/designer/Love_Book.png" alt="Love Book">
+        <h3>Love Book</h3>
+		</a>
+        <p class="price">MRP: ₹80</p>
+        <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Love%20Book" target="_blank">Buy on WhatsApp</a>
+      </div>	  
+
+	  
+	 
+	 </div>
     </div>
+
+
+<!--Occasions-->
+	<div id="occasions" class="category">
+	  <h3>🍫 Occasional Chocolates</h3>
+	  <div class="products">
+	  
+<!--Birthday Box -->	  
+	  <div class="product-card" id="birthday-box">
+          <a href="product.html?id=birthday-box">  
+		  <img src="image/occasions/Birthday_Box.png" alt="Birthday Box">
+        <h3>Birthday Box</h3>
+		</a>
+        <p class="price">MRP: ₹230</p>
+        <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Birthday%20Box" target="_blank">Buy on WhatsApp</a>
+      </div>
+
+<!--Greeting Box -->	  
+	  <div class="product-card" id="greeting-box">
+          <a href="product.html?id=greeting-box">
+		  <img src="image/occasions/Greeting_Box.png" alt="Greeting Box">
+        <h3>Birthday Box</h3>
+		</a>
+        <p class="price">MRP: ₹230</p>
+        <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Greeting%20Box" target="_blank">Buy on WhatsApp</a>
+      </div>
+
+<!--Happy Moment -->	  
+	  <div class="product-card" id="happy-moment">
+          <a href="product.html?id=happy-moment">
+		  <img src="image/occasions/Happy_Moment.png" alt="Happy Moment">
+        <h3>Happy Moment</h3>
+		</a>
+        <p class="price">MRP: ₹230</p>
+        <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Happy%20Moment" target="_blank">Buy on WhatsApp</a>
+      </div>	  
+
+<!--Love Lips -->	  
+	  <div class="product-card" id="love-lips">
+          <a href="product.html?id=love-lips">
+		  <img src="image/occasions/Love_Lips.png" alt="Love Lips">
+        <h3>Love Lips</h3>
+		</a>
+        <p class="price">MRP: ₹220</p>
+        <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Love%20Lips" target="_blank">Buy on WhatsApp</a>
+      </div>
+
+<!--Jali Yellow -->	  
+	  <div class="product-card" id="jali-yellow">
+          <a href="product.html?id=jali-yellow">  
+		  <img src="image/occasions/Jali_Yellow.png" alt="Jali Yellow">
+        <h3>Jali Yellow</h3>
+		</a>
+        <p class="price">MRP: ₹250</p>
+        <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Jali%20Yellow" target="_blank">Buy on WhatsApp</a>
+      </div>
+
+<!--Jali Red -->	  
+	  <div class="product-card" id="jali-red">
+          <a href="product.html?id=jali-red"> 
+		  <img src="image/occasions/Jali_Red.png" alt="Jali Red">
+        <h3>Jali Yellow</h3>
+		</a>
+        <p class="price">MRP: ₹250</p>
+        <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Jali%20Red" target="_blank">Buy on WhatsApp</a>
+      </div>	  
+	  
+<!--Transparent Collection -->	  
+	  <div class="product-card" id="transparent-collection">
+          <a href="product.html?id=transparent-collection">
+		  <img src="image/occasions/Transparent_Collection.png" alt="Transparent Collection">
+        <h3>Transparent Collection</h3>
+		</a>
+        <p class="price">MRP: ₹250</p>
+        <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Transparent%20Collection" target="_blank">Buy on WhatsApp</a>
+      </div>	 
+
+</div>
+    </div>	  
+
+<!-- Festivals -->
+<div id="festivals" class="category">
+  <h3>🍫 Festival Chocolates</h3>
+  <div class="products">
+
+<!-- Diwali Box -->
+    <div class="product-card" id="diwali-box">
+      <a href="product.html?id=diwali-box">
+        <img src="image/festivals/Diwali_Box.png" alt="Diwali Box">
+        <h3>Diwali Box</h3>
+      </a>
+      <p class="price">MRP: ₹350</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Diwali%20Box" target="_blank">Buy on WhatsApp</a>
+    </div>
+
+<!-- New Year -->
+    <div class="product-card" id="new-year">
+      <a href="product.html?id=new-year">
+        <img src="image/festivals/New_Year.png" alt="New Year">
+        <h3>New Year</h3>
+      </a>
+      <p class="price">MRP: ₹300</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20New%20Year" target="_blank">Buy on WhatsApp</a>
+    </div>
+
+<!-- Royal Box -->
+<div class="product-card" id="royal-box">
+  <a href="product.html?id=royal-box">
+    <img src="image/festivals/Royal_Box.png" alt="Royal Box">
+    <h3>Royal Box</h3>
+  </a>
+  <p class="price">MRP: ₹350</p>
+  <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Royal%20Box" target="_blank">Buy on WhatsApp</a>
+</div>
+
+<!-- Merry Christmas -->
+<div class="product-card" id="merry-christmas">
+  <a href="product.html?id=merry-christmas">
+    <img src="image/festivals/Merry_Christmas.png" alt="Merry Christmas">
+    <h3>Merry Christmas</h3>
+  </a>
+  <p class="price">MRP: ₹300</p>
+  <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Merry%20Christmas" target="_blank">Buy on WhatsApp</a>
+</div>
+
+  </div>
+</div>
+  
+<!-- Bars -->
+<div id="bars" class="category">
+  <h3>🍫 Bartype Chocolates</h3>
+  <div class="products">
+
+<!-- Birthday Bars -->
+    <div class="product-card" id="birthday-bars">
+      <a href="product.html?id=birthday-bars">
+        <img src="image/bars/Birthday_Bars.png" alt="Birthday Bar">
+        <h3>Birthday Bar</h3>
+      </a>
+      <p class="price">MRP: ₹85</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Birthday%20Bar" target="_blank">Buy on WhatsApp</a>
+    </div>
+
+<!-- Diwali Bar -->
+    <div class="product-card" id="diwali-bar">
+      <a href="product.html?id=diwali-bar">
+        <img src="image/bars/Diwali_Bar_blue.png" alt="Diwali Bar Blue">
+        <h3>Diwali Bar Blue</h3>
+      </a>
+      <p class="price">MRP: ₹85</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Diwali%20Bar%20blue" target="_blank">Buy on WhatsApp</a>
+    </div>
+	
+    <div class="product-card" id="diwali-bar-red">
+      <a href="product.html?id=diwali-bar-red">
+        <img src="image/bars/Diwali_Bar_red.png" alt="Diwali Bar">
+        <h3>Diwali Bar Red</h3>
+      </a>
+      <p class="price">MRP: ₹85</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Diwali%20Bar%20red" target="_blank">Buy on WhatsApp</a>
+    </div>	
+	
+
+<!-- Best Wishes -->
+    <div class="product-card" id="best-wishes">
+      <a href="product.html?id=best-wishes">
+        <img src="image/bars/Best_Wishes.png" alt="Best Wishes">
+        <h3>Best Wishes</h3>
+      </a>
+      <p class="price">MRP: ₹85</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Best%20Wishes" target="_blank">Buy on WhatsApp</a>
+    </div>
+
+<!-- Congratulation -->
+    <div class="product-card" id="congratulation">
+      <a href="product.html?id=congratulation">
+        <img src="image/bars/Congratulation.png" alt="Congratulation">
+        <h3>Congratulation</h3>
+      </a>
+      <p class="price">MRP: ₹85</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Congratulation" target="_blank">Buy on WhatsApp</a>
+    </div>
+
+<!-- Thank You -->
+    <div class="product-card" id="thank-you">
+      <a href="product.html?id=thank-you">
+        <img src="image/bars/Thank_You.png" alt="Thank You">
+        <h3>Thank You</h3>
+      </a>
+      <p class="price">MRP: ₹85</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Thank%20You" target="_blank">Buy on WhatsApp</a>
+    </div>
+	
+<!-- Love You -->
+    <div class="product-card" id="love-you">
+      <a href="product.html?id=love-you">
+        <img src="image/bars/Love_You.png" alt="Love You">
+        <h3>Love You</h3>
+      </a>
+      <p class="price">MRP: ₹85</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Love%20You" target="_blank">Buy on WhatsApp</a>
+    </div>	
+	
+<!-- Anniversary Bar -->
+    <div class="product-card" id="anniversary-bar">
+      <a href="product.html?id=anniversary-bar">
+        <img src="image/bars/Anniversary_Bar.png" alt="Anniversary Bar">
+        <h3>Anniversary Bar</h3>
+      </a>
+      <p class="price">MRP: ₹85</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Anniversary%20Bar" target="_blank">Buy on WhatsApp</a>
+    </div>	
+  </div>
+</div>
+
   </section>
 
   <!-- Contact -->
@@ -358,6 +863,42 @@
       target="_blank">+91 70081 73772</a>
 </p>
   </section>
+  
+  <script>
+ 
+<!-- Tab Switch in chocolate category --> 
+<!--function showCategory(categoryId) {
+  // Hide all categories
+  document.querySelectorAll('.category').forEach(c => c.classList.remove('active'));
+  // Remove active from all tabs
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  // Show selected category
+  document.getElementById(categoryId).classList.add('active');
+  // Activate clicked tab
+  event.target.classList.add('active');
+<!--}-->
+
+function showCategory(categoryId, btn) {
+  // Hide all categories
+  document.querySelectorAll('.category').forEach(c => c.classList.remove('active'));
+  // Remove active from all tabs
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  // Show selected category
+  document.getElementById(categoryId).classList.add('active');
+  // Activate clicked tab
+  event.target.classList.add('active');
+}
+
+// Restore active tab on page load
+window.addEventListener("DOMContentLoaded", () => {
+  const savedCategory = sessionStorage.getItem("activeCategory") || "classics";
+  const btn = document.querySelector(`.tab-btn[onclick*="${savedCategory}"]`);
+  showCategory(savedCategory, btn);
+});
+
+
+</script>
+
 
   <!-- Footer -->
   <footer>
