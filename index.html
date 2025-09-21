@@ -6,12 +6,20 @@
   <title>FOON MOON Homemade Chocolate</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background: radial-gradient(circle at center, #ffe6f0, #e6f7ff, #fff9e6, #e6ffe6, #f0e6ff);
-      overflow-x: hidden;
-    }
+/* General body text: clean sans-serif */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff8f0;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* Headings: stylish but readable */
+h1, h2, h3, .flavors-box h3 {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-weight: bold;
+}
 
     /* Navbar */
     nav {
@@ -266,11 +274,140 @@
     <div style="background: #f9f0ff; border-radius: 12px; padding: 20px; max-width: 300px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
       <h3 style="color: #ff69b4; font-size: 1.4rem;">🎁 Premium Festive Packs</h3>
       <p style="color: #444;">We create <b>premium chocolate gift packs</b> designed beautifully for festivals and special occasions.</p>
-    </div>
+    </div>.
+	
+	<!-- 🔹 Fancy Flavors Box -->
+<div class="flavors-box">
+  <h3>🍫 Our Flavors 🍬</h3>
+  <div class="flavors-list">
+    <span class="flavor f1">Milk Chocolate</span>
+    <span class="flavor f2">Dark Chocolate</span>
+    <span class="flavor f3">White Chocolate</span>
+    <span class="flavor f4">Cashew</span>
+    <span class="flavor f5">Peanut</span>
+    <span class="flavor f6">Kishmis</span>
+    <span class="flavor f7">Chilli Flake</span>
+    <span class="flavor f8">Oreo</span>
+    <span class="flavor f9">Pista</span>
+    <span class="flavor f10">Almond</span>
+    <span class="flavor f11">Tuty Fruity</span>
+    <span class="flavor f12">Butter Scotch</span>
+	
+<!-- 🔁 Duplicate images for seamless loop -->	
+	
+	<span class="flavor f1">Milk Chocolate</span>
+    <span class="flavor f2">Dark Chocolate</span>
+    <span class="flavor f3">White Chocolate</span>
+    <span class="flavor f4">Cashew</span>
+    <span class="flavor f5">Peanut</span>
+    <span class="flavor f6">Kishmis</span>
+    <span class="flavor f7">Chilli Flake</span>
+    <span class="flavor f8">Oreo</span>
+    <span class="flavor f9">Pista</span>
+    <span class="flavor f10">Almond</span>
+    <span class="flavor f11">Tuty Fruity</span>
+    <span class="flavor f12">Butter Scotch</span>
+  </div>
+</div>
+
 
   </div>
 </section>
 
+<!-- 🔹 Fancy Flavors Box -->
+
+<style>
+.scroll-container {
+  width: 100%;
+  overflow: hidden;
+  background: #fff8f0;
+  padding: 15px 0;
+  margin: 30px 0;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.scroll-images {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 20s linear infinite;
+}
+
+.scroll-images img {
+  height: 140px;
+  margin: 0 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); } /* moves half, then repeats seamlessly */
+}
+</style>
+
+<style>
+/* 🔹 Box Styling */
+.flavors-box {
+  margin: 40px auto;
+  padding: 25px;
+  text-align: center;
+  background: linear-gradient(135deg, #fff8f0, #ffe9d6);
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  max-width: 750px;
+}
+
+.flavors-box h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #2e8b57;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 🔹 Flavor tags */
+.flavors-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.flavor {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  animation: glowBlink 2s infinite;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
+}
+
+.flavor:hover {
+  transform: scale(1.1);
+}
+
+/* 🔹 Glow effect animation */
+@keyframes glowBlink {
+  0% { opacity: 1; text-shadow: 0 0 5px #fff, 0 0 10px currentColor; }
+  50% { opacity: 0.6; text-shadow: none; }
+  100% { opacity: 1; text-shadow: 0 0 5px #fff, 0 0 10px currentColor; }
+}
+
+/* 🔹 Colors */
+.f1 { background: #ffdab9; color: #d2691e; }
+.f2 { background: #ddd; color: #222; }
+.f3 { background: #333; color: #fff; }
+.f4 { background: #ffe4b5; color: #8b4513; }
+.f5 { background: #ffefd5; color: #ff8c00; }
+.f6 { background: #f5f5dc; color: #800000; }
+.f7 { background: #e0ffe0; color: #006400; }
+.f8 { background: #fce4ec; color: #e0115f; }
+.f9 { background: #e0f7fa; color: #004d40; }
+.f10 { background: #faf0e6; color: #5c4033; }
+.f11 { background: #fff5ba; color: #ff4500; }
+.f12 { background: #ffe4e1; color: #a0522d; }
+</style>
 
 <style>
   #about {
@@ -427,9 +564,11 @@
     .product-card h3 {
       margin: 10px 0;
       color: #2e8b57; /* green */
-    }	
+    }
+.tab-btn {
+  cursor: pointer; /* 👆 shows hand symbol when hovering */	
 	
-	
+}	
   </style>
 </head>
 <body>
@@ -451,29 +590,81 @@
     </div>
   </div>
 
+<!--Scroll effect-->
+<!-- 🔹 Scrolling banner of chocolate images -->
+<div class="scroll-container">
+  <div class="scroll-images">
+    <img src="image/scroll/1.png" alt="Milk Chocolate">
+    <img src="image/scroll/2.png" alt="Dark Chocolate">
+    <img src="image/scroll/3.png" alt="White Chocolate">
+    <img src="image/scroll/4.png" alt="Hazelnut Chocolate">
+    <img src="image/scroll/5.png" alt="Caramel Chocolate">
+	<img src="image/scroll/6.png" alt="Caramel Chocolate">
+	<img src="image/scroll/7.png" alt="Caramel Chocolate">
+	<img src="image/scroll/8.png" alt="Caramel Chocolate">
+	<img src="image/scroll/9.png" alt="Caramel Chocolate">
+  </div>
+</div>
+
+<style>
+.scroll-container {
+  width: 100%;
+  overflow: hidden;
+  background: #fff8f0;
+  padding: 15px 0;
+  margin: 30px 0;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.scroll-images {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 25s linear infinite;
+}
+
+.scroll-images img {
+  height: 140px;
+  margin: 0 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+</style>
+
+
+
+
 
   <!-- Products -->
   <section id="products">
     <h2>Our Products</h2>
 	
 	  <!-- Category Tabs -->
- <!-- <div class="category-tabs">
-    <button class="tab-btn active" onclick="showCategory('classics')">🍫 Classics</button>
-    <button class="tab-btn" onclick="showCategory('designer')">💝 Designer</button>
-    <button class="tab-btn" onclick="showCategory('occasions')">🎉 Occasions</button>
-    <button class="tab-btn" onclick="showCategory('festivals')">🪔 Festivals</button>
-	<button class="tab-btn" onclick="showCategory('bars')">🍫 Bars</button>
-  </div>-->
-
+<div class="category-tabs">
+  <button class="tab-btn active" onclick="showCategory('classics')">🍫 Classics</button>
+  <button class="tab-btn" onclick="showCategory('designer')">💝 Designer</button>
+  <button class="tab-btn" onclick="showCategory('occasions')">🎉 Occasions</button>
+  <button class="tab-btn" onclick="showCategory('festivals')">🪔 Festivals</button>
+  <button class="tab-btn" onclick="showCategory('bars')">🍫 Bars</button>
+  <button class="tab-btn" onclick="showCategory('mugs', this)">☕ ChocoMug</button>
+  <button class="tab-btn" onclick="showCategory('kidszone', this)">🧸 Kidszone</button>
+</div>
+<!--
 <div class="tabs">
   <button class="tab-btn active" onclick="showCategory('classics', this)">Classics</button>
   <button class="tab-btn" onclick="showCategory('designer', this)">Designer</button>
   <button class="tab-btn" onclick="showCategory('occasions', this)">Occasions</button>
   <button class="tab-btn" onclick="showCategory('festivals', this)">Festivals</button>
   <button class="tab-btn" onclick="showCategory('bars', this)">Bars</button>
+  <button class="tab-btn" onclick="showCategory('mugs', this)">ChocoMug</button>
   
   
-</div>
+</div>-->
 
   
   <!--Classics-->
@@ -762,6 +953,56 @@
   <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Merry%20Christmas" target="_blank">Buy on WhatsApp</a>
 </div>
 
+<!-- Cartoon Rakhi -->
+<div class="product-card" id="cartoon-rakhi">
+  <a href="product.html?id=cartoon-rakhi">
+    <img src="image/festivals/Cartoon_Rakhi.png" alt="Cartoon Rakhi">
+    <h3>Cartoon Rakhi</h3>
+  </a>
+  <p class="price">MRP: ₹80</p>
+  <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Cartoon%20Rakhi" target="_blank">Buy on WhatsApp</a>
+</div>
+
+<!-- Fancy Rakhi -->
+<div class="product-card" id="fancy-rakhi">
+  <a href="product.html?id=cartoon-rakhi">
+    <img src="image/festivals/Fancy_Rakhi.png" alt="Fancy Rakhi">
+    <h3>Fancy Rakhi</h3>
+  </a>
+  <p class="price">MRP: ₹120</p>
+  <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Fancy%20Rakhi" target="_blank">Buy on WhatsApp</a>
+</div>
+
+<!-- Bro Rakhi -->
+<div class="product-card" id="bro-rakhi">
+  <a href="product.html?id=bro-rakhi">
+    <img src="image/festivals/Bro_Rakhi.png" alt="Bro Rakhi">
+    <h3>Bro Rakhi</h3>
+  </a>
+  <p class="price">MRP: ₹120</p>
+  <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Bro%20Rakhi" target="_blank">Buy on WhatsApp</a>
+</div>
+
+<!-- Cutomized Rakhi -->
+<div class="product-card" id="cutomized-rakhi">
+  <a href="product.html?id=cutomized-rakhi">
+    <img src="image/festivals/Cutomized_Rakhi.png" alt="Cutomized Rakhi">
+    <h3>Customized Rakhi</h3>
+  </a>
+  <p class="price">MRP: ₹120</p>
+  <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Bro%20Rakhi" target="_blank">Buy on WhatsApp</a>
+</div>
+
+<!-- Rakhi Celebration -->
+<div class="product-card" id="rakhi-celebration">
+  <a href="product.html?id=rakhi-celebration">
+    <img src="image/festivals/Rakhi_Celebration.png" alt="Rakhi-Celebration">
+    <h3>Rakhi Celebration</h3>
+  </a>
+  <p class="price">MRP: ₹120</p>
+  <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Rakhi%20Celebration" target="_blank">Buy on WhatsApp</a>
+</div>
+
   </div>
 </div>
   
@@ -848,10 +1089,176 @@
       </a>
       <p class="price">MRP: ₹85</p>
       <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Anniversary%20Bar" target="_blank">Buy on WhatsApp</a>
+    </div>
+   </div>
+</div>   
+	
+<!-- Mugs -->
+<div id="mugs" class="category">
+  <h3>🍫 Choco Mugs</h3>
+  <div class="products">
+  
+<!-- Birthday Mug -->
+    <div class="product-card" id="birthday-mug">
+      <a href="product.html?id=birthday-mug">
+        <img src="image/mugs/Birthday_Mug.png" alt="Birthday Mug">
+        <h3>Birthday Mug</h3>
+      </a>
+      <p class="price">MRP: ₹220</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Birthday%20Mug" target="_blank">Buy on WhatsApp</a>
+    </div>
+	
+<!-- Valentineday Mug -->
+    <div class="product-card" id="valentine-mug">
+      <a href="product.html?id=valentine-mug">
+        <img src="image/mugs/Valentine_Mug.png" alt="Valentine Mug">
+        <h3>Valentineday Mug</h3>
+      </a>
+      <p class="price">MRP: ₹220</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Valentine%20Mug" target="_blank">Buy on WhatsApp</a>
     </div>	
+	
+<!-- Congratulation Mug -->
+    <div class="product-card" id="congrats-mug">
+      <a href="product.html?id=congrats-mug">
+        <img src="image/mugs/Congratulation_Mug.png" alt="Congratulation Mug">
+        <h3>Congratulation Mug</h3>
+      </a>
+      <p class="price">MRP: ₹220</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Congratulation%20Mug" target="_blank">Buy on WhatsApp</a>
+    </div>	
+
+<!-- Anniversary Mug -->
+    <div class="product-card" id="anniversary-mug">
+      <a href="product.html?id=anniversary-mug">
+        <img src="image/mugs/Anniversary_Mug.png" alt="Anniversary Mug">
+        <h3>Anniversary Mug</h3>
+      </a>
+      <p class="price">MRP: ₹220</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Anniversary%20Mug" target="_blank">Buy on WhatsApp</a>
+    </div>
+
+<!-- Love Mug -->
+    <div class="product-card" id="love-mug">
+      <a href="product.html?id=love-mug">
+        <img src="image/mugs/Love_Mug.png" alt="Love">
+        <h3>Love Mug</h3>
+      </a>
+      <p class="price">MRP: ₹220</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Love%20Mug" target="_blank">Buy on WhatsApp</a>
+    </div>	
+	
+<!-- Teachersday Mug -->
+    <div class="product-card" id="teachersday-mug">
+      <a href="product.html?id=teachersday-mug">
+        <img src="image/mugs/Teachersday_Mug.png" alt="Teachersday Mug">
+        <h3>Teachersday Mug</h3>
+      </a>
+      <p class="price">MRP: ₹220</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Teachersday%20Mug" target="_blank">Buy on WhatsApp</a>
+    </div>	
+	
+<!-- BestFriend Mug -->
+    <div class="product-card" id="bestfriend-mug">
+      <a href="product.html?id=bestfriend-mug">
+        <img src="image/mugs/BestFriend_Mug.png" alt="BestFriend Mug">
+        <h3>BestFriend Mug</h3>
+      </a>
+      <p class="price">MRP: ₹220</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20BestFriend%20Mug" target="_blank">Buy on WhatsApp</a>
+    </div>	
+
+<!-- Fathersday Mug -->
+    <div class="product-card" id="fathersday-mug">
+      <a href="product.html?id=fathersday-mug">
+        <img src="image/mugs/Fathersday_Mug.png" alt="Fathersday Mug">
+        <h3>Fathersday Mug</h3>
+      </a>
+      <p class="price">MRP: ₹220</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Fathersday%20Mug" target="_blank">Buy on WhatsApp</a>
+    </div>	
+
+	
   </div>
 </div>
 
+<!-- Kids Zone -->
+<div id="kidszone" class="category">
+  <h3>🧸 Kidszone</h3>
+  <div class="products">
+  
+<!-- Face Lollypops -->
+    <div class="product-card" id="face-lollypops">
+      <a href="product.html?id=face-lollypops">
+        <img src="image/kidszone/Face_Lollypops.png" alt="Face Lollypops">
+        <h3>Face Lollypops</h3>
+      </a>
+      <p class="price">MRP: ₹20</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Face%20Lollypops" target="_blank">Buy on WhatsApp</a>
+    </div> 
+
+<!-- Designer Lollypops-->
+    <div class="product-card" id="designer-lollypops">
+      <a href="product.html?id=designer-lollypops">
+        <img src="image/kidszone/Designer_Lollypops.png" alt="Designer Lollypops">
+        <h3>Designer Lollypops</h3>
+      </a>
+      <p class="price">MRP: ₹30</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Designer%20Lollypops" target="_blank">Buy on WhatsApp</a>
+    </div> 
+	
+<!-- Anar ChocoCracker-->
+    <div class="product-card" id="anar-cracker">
+      <a href="product.html?id=anar-cracker">
+        <img src="image/kidszone/Anar_Cracker.png" alt="Anar Cracker">
+        <h3>Anar ChocoCracker</h3>
+      </a>
+      <p class="price">MRP: ₹15</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Anar%20Cracker" target="_blank">Buy on WhatsApp</a>
+    </div>	
+	
+<!-- Chakri Cracker-->
+    <div class="product-card" id="chakri-cracker">
+      <a href="product.html?id=chakri-cracker">
+        <img src="image/kidszone/Chakri_Cracker.png" alt="Chakri Cracker">
+        <h3>Chakri ChocoCracker</h3>
+      </a>
+      <p class="price">MRP: ₹15</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Chakri%20Cracker" target="_blank">Buy on WhatsApp</a>
+    </div>
+
+<!-- Laxmi Bomb-->
+    <div class="product-card" id="laxmi-bomb">
+      <a href="product.html?id=laxmi-bomb">
+        <img src="image/kidszone/Laxmi_Bomb.png" alt="Laxmi Bomb">
+        <h3>Laxmi ChocoBomb</h3>
+      </a>
+      <p class="price">MRP: ₹20</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Laxmi%20Bomb" target="_blank">Buy on WhatsApp</a>
+    </div>
+
+<!-- Ladi Cracker-->
+    <div class="product-card" id="ladi-cracker">
+      <a href="product.html?id=ladi-cracker">
+        <img src="image/kidszone/Ladi_Cracker.png" alt="Ladi Cracker">
+        <h3>Ladi Cracker</h3>
+      </a>
+      <p class="price">MRP: ₹20</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Ladi%20Cracker" target="_blank">Buy on WhatsApp</a>
+    </div>	
+	
+<!-- Rocket Cracker-->
+    <div class="product-card" id="rocket-cracker">
+      <a href="product.html?id=rocket-cracker">
+        <img src="image/kidszone/Rocket_Bomb.png" alt="Rocket Cracker">
+        <h3>Rocket Cracker</h3>
+      </a>
+      <p class="price">MRP: ₹15</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Rocket%20Cracker" target="_blank">Buy on WhatsApp</a>
+    </div>	
+	
+ </div>
+ </div>
   </section>
 
   <!-- Contact -->
@@ -863,7 +1270,73 @@
       target="_blank">+91 70081 73772</a>
 </p>
   </section>
-  
+ 
+<!-- 🔹 Our Locations -->
+<div class="locations-box">
+  <h3>📍 Our Locations</h3>
+  <div class="locations">
+    <div class="location">
+      <h4>🏬 Bhubaneswar</h4>
+      <p>VSS Nagar,<br>Bhubaneswar, Odisha</p>
+    </div>
+    <div class="location">
+      <h4>🏬 Bangalore</h4>
+      <p>Electronic City Phase-2,<br>
+      Gulimangla, Laxmi Narayanapuram,<br>
+      Bangalore, Karnataka</p>
+    </div>
+  </div>
+</div>
+
+<style>
+.locations-box {
+  margin: 30px auto;
+  padding: 15px;
+  text-align: center;
+  max-width: 800px;
+}
+
+.locations-box h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #2e8b57;
+}
+
+/* Flex layout for branch cards */
+.locations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.location {
+  flex: 1 1 300px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.location:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.location h4 {
+  margin-bottom: 8px;
+  color: #d2691e;
+  font-size: 1.2rem;
+}
+
+.location p {
+  margin: 0;
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+</style>
   <script>
  
 <!-- Tab Switch in chocolate category --> 
