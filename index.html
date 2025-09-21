@@ -293,20 +293,6 @@ h1, h2, h3, .flavors-box h3 {
     <span class="flavor f11">Tuty Fruity</span>
     <span class="flavor f12">Butter Scotch</span>
 	
-<!-- 🔁 Duplicate images for seamless loop -->	
-	
-	<span class="flavor f1">Milk Chocolate</span>
-    <span class="flavor f2">Dark Chocolate</span>
-    <span class="flavor f3">White Chocolate</span>
-    <span class="flavor f4">Cashew</span>
-    <span class="flavor f5">Peanut</span>
-    <span class="flavor f6">Kishmis</span>
-    <span class="flavor f7">Chilli Flake</span>
-    <span class="flavor f8">Oreo</span>
-    <span class="flavor f9">Pista</span>
-    <span class="flavor f10">Almond</span>
-    <span class="flavor f11">Tuty Fruity</span>
-    <span class="flavor f12">Butter Scotch</span>
   </div>
 </div>
 
@@ -343,7 +329,10 @@ h1, h2, h3, .flavors-box h3 {
 @keyframes scroll-left {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); } /* moves half, then repeats seamlessly */
+  
 }
+
+
 </style>
 
 <style>
@@ -603,6 +592,16 @@ h1, h2, h3, .flavors-box h3 {
 	<img src="image/scroll/7.png" alt="Caramel Chocolate">
 	<img src="image/scroll/8.png" alt="Caramel Chocolate">
 	<img src="image/scroll/9.png" alt="Caramel Chocolate">
+	
+	<img src="image/scroll/1.png" alt="Milk Chocolate">
+    <img src="image/scroll/2.png" alt="Dark Chocolate">
+    <img src="image/scroll/3.png" alt="White Chocolate">
+    <img src="image/scroll/4.png" alt="Hazelnut Chocolate">
+    <img src="image/scroll/5.png" alt="Caramel Chocolate">
+	<img src="image/scroll/6.png" alt="Caramel Chocolate">
+	<img src="image/scroll/7.png" alt="Caramel Chocolate">
+	<img src="image/scroll/8.png" alt="Caramel Chocolate">
+	<img src="image/scroll/9.png" alt="Caramel Chocolate">
   </div>
 </div>
 
@@ -612,27 +611,26 @@ h1, h2, h3, .flavors-box h3 {
   overflow: hidden;
   background: #fff8f0;
   padding: 15px 0;
-  margin: 30px 0;
   border-radius: 12px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
 
-.scroll-images {
-  display: inline-block;
-  white-space: nowrap;
-  animation: scroll-left 25s linear infinite;
+.scroll-track {
+  display: flex;
+  width: calc(200%); /* track is twice as wide for smooth loop */
+  animation: scroll 12s linear infinite;
 }
 
-.scroll-images img {
+.scroll-track img {
   height: 140px;
-  margin: 0 25px;
+  margin: 0 20px;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
-@keyframes scroll-left {
-  from { transform: translateX(100%); }
-  to { transform: translateX(-100%); }
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 </style>
 
@@ -1081,6 +1079,16 @@ h1, h2, h3, .flavors-box h3 {
       <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Love%20You" target="_blank">Buy on WhatsApp</a>
     </div>	
 	
+<!-- Best Friend -->
+    <div class="product-card" id="best-friend">
+      <a href="product.html?id=best-friend">
+        <img src="image/bars/Best_Friend.png" alt="Best Friend">
+        <h3>Best Friend</h3>
+      </a>
+      <p class="price">MRP: ₹85</p>
+      <a class="buy-btn" href="https://wa.me/917008173772?text=I%20want%20to%20buy%20Best%20Friend" target="_blank">Buy on WhatsApp</a>
+    </div>		
+	
 <!-- Anniversary Bar -->
     <div class="product-card" id="anniversary-bar">
       <a href="product.html?id=anniversary-bar">
@@ -1291,50 +1299,38 @@ h1, h2, h3, .flavors-box h3 {
 <style>
 .locations-box {
   margin: 30px auto;
-  padding: 15px;
+  padding: 20px;
   text-align: center;
-  max-width: 800px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+  max-width: 700px;
 }
 
 .locations-box h3 {
   font-size: 1.8rem;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   color: #2e8b57;
 }
 
-/* Flex layout for branch cards */
-.locations {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
 .location {
-  flex: 1 1 300px;
-  background: #fff;
+  margin: 15px 0;
   padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.location:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  background: #f9f9f9;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .location h4 {
-  margin-bottom: 8px;
+  margin-bottom: 5px;
   color: #d2691e;
-  font-size: 1.2rem;
 }
 
 .location p {
   margin: 0;
   color: #444;
-  font-size: 0.95rem;
-  line-height: 1.4;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 </style>
   <script>
